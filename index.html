@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Recipe Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <article class="recipe-card">
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Weekend Bake Project</p>
+          <h1>Chocolate Cake</h1>
+          <p class="description">
+            A soft, rich chocolate cake layered with silky frosting and built for beginners who want
+            a reliable, crowd-friendly dessert.
+          </p>
+          <div class="meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Prep Time</span>
+              <strong>45 mins</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Bake Time</span>
+              <strong>35 mins</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Serves</span>
+              <strong>8 slices</strong>
+            </div>
+          </div>
+        </div>
+        <figure class="hero-image-wrap">
+          <img
+            class="hero-image"
+            src="cake-illustration.svg"
+            alt="Chocolate cake with glossy frosting and berries on top"
+          >
+        </figure>
+      </section>
+
+      <section class="dashboard">
+        <div class="progress-card">
+          <div class="progress-header">
+            <div>
+              <p class="section-kicker">Cooking Progress</p>
+              <h2>Step Tracker</h2>
+            </div>
+            <div class="timer-badge" aria-live="polite">
+              <span>Time Left</span>
+              <strong id="timer">45:00</strong>
+            </div>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <p class="progress-text" id="progressText">Start cooking to guide your way through 6 steps.</p>
+          <div class="action-row">
+            <button id="toggleIngredients" class="secondary-btn" type="button" aria-expanded="false" aria-controls="ingredientsPanel">
+              Show Ingredients
+            </button>
+            <button id="toggleSteps" class="secondary-btn" type="button" aria-expanded="true" aria-controls="stepsPanel">
+              Hide Steps
+            </button>
+            <button id="startCooking" class="primary-btn" type="button">Start Cooking</button>
+            <button id="nextStep" class="ghost-btn" type="button" disabled>Next Step</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="info-panel collapsible is-collapsed" id="ingredientsPanel">
+          <div class="panel-heading">
+            <p class="section-kicker">What You Need</p>
+            <h2>Ingredients</h2>
+          </div>
+          <ul class="interactive-list ingredients-list">
+            <li>1 3/4 cups all-purpose flour</li>
+            <li>3/4 cup cocoa powder</li>
+            <li>2 cups caster sugar</li>
+            <li>2 tsp baking powder</li>
+            <li>2 large eggs</li>
+            <li>1 cup whole milk</li>
+            <li>1/2 cup vegetable oil</li>
+            <li>1 cup hot coffee</li>
+          </ul>
+        </div>
+
+        <div class="info-panel collapsible" id="stepsPanel">
+          <div class="panel-heading">
+            <p class="section-kicker">How To Make It</p>
+            <h2>Instructions</h2>
+          </div>
+          <ol class="interactive-list steps-list" id="stepsList">
+            <li>Preheat your oven to 180 C and grease two 8-inch cake tins.</li>
+            <li>Whisk the flour, cocoa, sugar, and baking powder in a large mixing bowl.</li>
+            <li>Add eggs, milk, and oil, then mix until the batter becomes smooth.</li>
+            <li>Pour in the hot coffee and stir gently to loosen the batter.</li>
+            <li>Divide between tins and bake for 30 to 35 minutes until springy.</li>
+            <li>Cool completely, frost generously, and slice for serving.</li>
+          </ol>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
